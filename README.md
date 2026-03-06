@@ -1,5 +1,4 @@
 # G-Scores API (Spring Boot)
----
 
 ## 🔄 System Flow
 1. **Request:** Client sends an HTTP request (e.g., `GET /api/students/top10`).
