@@ -1,5 +1,15 @@
 # G-Scores API (Spring Boot)
 
+![Deploy to Render](/pics/pic1.png)
+Deploy to Render
+
+![Aiven for Database](/pics/pic2.png)
+Aiven for Database
+
+![API service](/pics/pic3.png)
+API service
+
+
 ## 🔄 System Flow
 1. **Request:** Client sends an HTTP request (e.g., `GET /api/students/top10`).
 2. **Controller:** Intercepts the request and maps it to a Service method.
