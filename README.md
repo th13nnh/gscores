@@ -1,7 +1,4 @@
 # G-Scores API (Spring Boot)
-
-A high-performance RESTful API built with **Spring Boot** to manage and analyze student exam results.
-
 ---
 
 ## 🔄 System Flow
