@@ -28,9 +28,20 @@ public class StudentService {
 
     public Map<String, Object> getReport() {
         Map<String, Object> report = new HashMap<>();
-        // List of subjects exactly as named in your Database/Entity
-        String[] subjects = {"toan", "ngu_van", "ngoai_ngu", "vat_li", "hoa_hoc", "sinh_hoc"};
-        String[] displayNames = {"Math", "Literature", "English", "Physics", "Chemistry", "Biology"};
+
+        // 1. List of database column names (snake_case for Postgres)
+        String[] subjects = {
+                "toan", "ngu_van", "ngoai_ngu",
+                "vat_li", "hoa_hoc", "sinh_hoc",
+                "lich_su", "dia_li", "gdcd"
+        };
+
+        // 2. Matching display names for the Chart
+        String[] displayNames = {
+                "Math", "Literature", "English",
+                "Physics", "Chemistry", "Biology",
+                "History", "Geography", "Civic Edu"
+        };
 
         report.put("subjects", displayNames);
 
@@ -40,7 +51,6 @@ public class StudentService {
         List<Long> level4 = new ArrayList<>(); // < 4
 
         for (String sub : subjects) {
-            // Build a dynamic SQL query for this subject
             String sql = "SELECT " +
                     "COUNT(CASE WHEN " + sub + " >= 8 THEN 1 END), " +
                     "COUNT(CASE WHEN " + sub + " >= 6 AND " + sub + " < 8 THEN 1 END), " +
@@ -48,10 +58,9 @@ public class StudentService {
                     "COUNT(CASE WHEN " + sub + " < 4 THEN 1 END) " +
                     "FROM students";
 
-            Query query = entityManager.createNativeQuery(sql);
+            jakarta.persistence.Query query = entityManager.createNativeQuery(sql);
             Object[] results = (Object[]) query.getSingleResult();
 
-            // results[0] is count for level 1, results[1] for level 2, etc.
             level1.add(((Number) results[0]).longValue());
             level2.add(((Number) results[1]).longValue());
             level3.add(((Number) results[2]).longValue());
