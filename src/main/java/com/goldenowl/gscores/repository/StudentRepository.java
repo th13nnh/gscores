@@ -14,7 +14,7 @@ public interface StudentRepository extends JpaRepository<Student, String> {
             nativeQuery = true)
     List<Student> findTop10GroupA();
 
-    // Counts for statistics
+    // Counts
     long countByToanGreaterThanEqual(Double score);
     long countByToanLessThanAndToanGreaterThanEqual(Double upper, Double lower);
     long countByToanLessThan(Double score);

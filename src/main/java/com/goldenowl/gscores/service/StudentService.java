@@ -29,7 +29,7 @@ public class StudentService {
     public Map<String, Object> getReport() {
         Map<String, Object> report = new HashMap<>();
 
-        // 1. List of database column names (snake_case for Postgres)
+        // 1. List of database column names
         String[] subjects = {
                 "toan", "ngu_van", "ngoai_ngu",
                 "vat_li", "hoa_hoc", "sinh_hoc",

@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/students")
-@CrossOrigin(origins = "*") // Allows your React app to talk to this API
+@CrossOrigin(origins = "*") // Allows React app to talk to API
 public class StudentController {
 
     private final StudentService studentService;

@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 @Table(name = "students")
 public class Student {
 
-    @Id // This tells the database that SBD is the primary key (unique ID)
+    @Id // SBD is the primary key
     private String sbd;
 
     private Double toan;
@@ -23,7 +23,6 @@ public class Student {
     private String maNgoaiNgu;
 
     // --- Getters and Setters ---
-    // (To keep it simple, we generate these so Java can access the private variables)
 
     public String getSbd() { return sbd; }
     public void setSbd(String sbd) { this.sbd = sbd; }
