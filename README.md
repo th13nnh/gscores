@@ -46,3 +46,5 @@ docker compose up --build backend
   FROM students 
   ORDER BY total DESC 
   LIMIT 10;
+  ```
+  ![Thank you so much](/pics/thanks.png)
