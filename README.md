@@ -9,6 +9,10 @@ Aiven for Database
 ![API service](/pics/pic3.png)
 API service
 
+You can clone the project and use Docker to start backend service
+```dockerfile
+docker compose up --build backend
+```
 
 ## 🔄 System Flow
 1. **Request:** Client sends an HTTP request (e.g., `GET /api/students/top10`).
